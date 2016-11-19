@@ -1,0 +1,10 @@
+.gform_wrapper .gfield .intl-tel-input {
+    display: block;
+    margin-bottom: 10px;
+}
+
+.gform_wrapper .gfield .intl-tel-input.allow-dropdown input[type=tel] {
+    padding-right: 6px !important;
+    padding-left: 52px !important;
+    margin-left: 0;
+}

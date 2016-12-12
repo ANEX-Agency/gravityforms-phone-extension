@@ -4,7 +4,7 @@ Donate link: http://paypal.me/joehana
 Tags: forms, phone, input
 Requires at least: 4.5.0
 Tested up to: 4.7
-Stable tag: 1.0.0
+Stable tag: 1.0.1
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -24,6 +24,9 @@ Extension for GravityForms (WordPress) which applies the International Phone Inp
 -
 
 == Changelog ==
+
+= 1.0.1 =
+* FIX: Remove 'http:' from $.get function in init.js to prevent issues on SSL Sites
 
 = 1.0.0 =
 * Initial Release

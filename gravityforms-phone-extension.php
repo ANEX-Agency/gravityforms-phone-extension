@@ -25,6 +25,10 @@ add_action( 'gform_loaded', array( 'GF_Phone_Extension_Bootstrap', 'load' ), 5 )
 class GF_Phone_Extension_Bootstrap {
 
 	public static function load(){
+		
+		if ( ! method_exists( 'GFForms', 'include_addon_framework' ) ) {
+			return;
+		}
 
 		require_once( 'class-gf-phone-extension.php' );
 

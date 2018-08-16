@@ -1,5 +1,7 @@
 <?php
 
+GFForms::include_addon_framework();
+
 /** 
  * Create Gravity Forms Phone Extension
  * plugin class
@@ -7,7 +9,7 @@
  * @since 1.0.0
  */
 
-class GF_Phone_Extension {
+class GF_Phone_Extension extends GFAddon {
 	
 	/**
 	 * Contains an instance of this class, if available.
@@ -118,36 +120,95 @@ class GF_Phone_Extension {
 	}
 
 	/**
-	 * Initializes the plugin
+	 * Plugin starting point. Handles hooks, and loading of language files.
 	 *
-	 * @since  1.0.0
+	 * @since  1.2.0
 	 * @access public
 	 */
-	public function __construct() {
+	public function init() {
 
-		// Register site styles
-		add_action( 'wp_enqueue_scripts', array( $this, 'assets' ) );
-        
+		parent::init();
+
 	}
-
 
 	/**
-	 * Register and enqueue plugin-specific assets
+	 * Register needed styles.
 	 *
-	 * @since  1.0.0
+	 * @since  1.2.0
 	 * @access public
+	 *
+	 * @return array
 	 */
-	public function assets() {
-		
-		// register & enqueue styles
-		wp_enqueue_style( 'intl-tel-input',					plugins_url( 'vendor/intl-tel-input/css/intlTelInput.css',		dirname( __FILE__ ) ), array(),								'11.0.11' );
-		wp_enqueue_style( 'gravityforms-phone-extension',	plugins_url( 'assets/css/style.css',							dirname( __FILE__ ) ), array(),								$this->_version );
+	public function styles() {
 
-		// register & enqueue scripts
-		wp_enqueue_script( 'intl-tel-input',				plugins_url( 'vendor/intl-tel-input/js/intlTelInput.min.js',	dirname( __FILE__ ) ), array( 'jquery' ),					'11.0.11',				true );
-		wp_enqueue_script( 'intl-tel-input-utils',			plugins_url( 'vendor/intl-tel-input/js/utils.js',				dirname( __FILE__ ) ), array( 'jquery', 'intl-tel-input' ),	'11.0.11',				true );
-		wp_enqueue_script( 'gravityforms-phone-extension',	plugins_url( 'assets/js/init.js',								dirname( __FILE__ ) ), array( 'jquery', 'intl-tel-input' ),	$this->_version,		true );
+		$styles = array(
+			array(
+				'handle'	=> 'intl-tel-input',
+				'src'		=> $this->get_base_url() . '/vendor/intl-tel-input/css/intlTelInput.css',
+				'version'	=> '11.0.11',
+				'enqueue'	=> array(
+					array( 'field_types' => array( 'phone' ) )
+				),
+			),
+			array(
+				'handle'	=> $this->_slug,
+				'src'		=> $this->get_base_url() . '/assets/css/style.css',
+				'version'	=> $this->_version,
+				'enqueue'	=> array(
+					array( 'field_types' => array( 'phone' ) )
+				),
+			),
+		);
+
+		return array_merge( parent::styles(), $styles );
 
 	}
-	
+
+	/**
+	 * Register needed scripts.
+	 *
+	 * @since  1.2.0
+	 * @access public
+	 *
+	 * @return array
+	 */
+	public function scripts() {
+
+		$scripts = array(
+			array(
+				'handle'	=> 'intl-tel-input',
+				'src'		=> $this->get_base_url() . '/vendor/intl-tel-input/js/intlTelInput.min.js',
+				'deps'		=> array( 'jquery' ),
+				'version'	=> '11.0.11',
+				'in_footer' => true,
+				'enqueue'	=> array(
+					array( 'field_types' => array( 'phone' ) )
+				),
+			),
+			array(
+				'handle'	=> 'intl-tel-input-utils',
+				'src'		=> $this->get_base_url() . '/vendor/intl-tel-input/css/utils.js',
+				'deps'		=> array( 'jquery', 'intl-tel-input' ),
+				'version'	=> '11.0.11',
+				'in_footer' => true,
+				'enqueue'	=> array(
+					array( 'field_types' => array( 'phone' ) )
+				),
+			),
+			array(
+				'handle'	=> $this->_slug,
+				'src'		=> $this->get_base_url() . '/assets/js/init.js',
+				'deps'		=> array( 'jquery', 'intl-tel-input' ),
+				'version'	=> $this->_version,
+				'in_footer' => true,
+				'enqueue'	=> array(
+					array( 'field_types' => array( 'phone' ) )
+				),
+			),
+		);
+
+		return array_merge( parent::scripts(), $scripts );
+
+	}
+
 }

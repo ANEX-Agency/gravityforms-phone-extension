@@ -25,6 +25,9 @@ Extension for GravityForms (WordPress) which applies the International Phone Inp
 
 == Changelog ==
 
+= 1.2.1 =
+* Fix minor issues
+
 = 1.2.0 =
 * Improve Script and Style Loading
 

@@ -187,7 +187,7 @@ class GF_Phone_Extension extends GFAddon {
 			),
 			array(
 				'handle'	=> 'intl-tel-input-utils',
-				'src'		=> $this->get_base_url() . '/vendor/intl-tel-input/css/utils.js',
+				'src'		=> $this->get_base_url() . '/vendor/intl-tel-input/js/utils.js',
 				'deps'		=> array( 'jquery', 'intl-tel-input' ),
 				'version'	=> '11.0.11',
 				'in_footer' => true,

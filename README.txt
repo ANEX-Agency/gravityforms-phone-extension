@@ -16,8 +16,21 @@ Extension for GravityForms (WordPress) which applies the International Phone Inp
 
 == Installation ==
 
-1. Upload `gravityforms-phone-extension` to the `/wp-content/plugins/` directory
+1. Upload `gravityforms-phone-extension` to the `/wp-content/plugins/` directory or uploade the .zip through the 'Plugins' menu in WordPress
 2. Activate the plugin through the 'Plugins' menu in WordPress
+3. All Gravity Forms "Phone" fields are now using the International Phone Input
+
+== Options ==
+
+You can customize the behavior of your fields by initialising the library with optional parameters. (Available options: https://github.com/jackocnr/intl-tel-input#options)  
+
+To do so, edit `assets/js/init.js` as follow:
+```javascript
+$field.intlTelInput({
+		// Put your options here
+	});
+```
+
 
 == Frequently Asked Questions ==
 

@@ -2,7 +2,7 @@ jQuery(document).ready(function($) {
     
 	var $form		= $(".gform_wrapper form");
 	if($form.length===0){
-		var $form	= $(".gv-edit-entry-wrapper form");
+		$form		= $(".gv-edit-entry-wrapper form");
 	};
 	var $field		= $(".gfield input[type=tel]");
 

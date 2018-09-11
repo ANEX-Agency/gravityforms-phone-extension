@@ -144,7 +144,7 @@ class GF_Phone_Extension extends GFAddon {
 		$styles = array(
 			array(
 				'handle'	=> 'intl-tel-input',
-				'src'		=> $this->get_base_url() . '/vendor/intl-tel-input/css/intlTelInput.css',
+				'src'		=> $this->get_base_url() . '/vendor/intl-tel-input/css/intlTelInput.min.css',
 				'version'	=> '11.0.11',
 				'enqueue'	=> array(
 					array( 'field_types' => array( 'phone' ) )

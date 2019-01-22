@@ -144,8 +144,8 @@ class GF_Phone_Extension extends GFAddon {
 		$styles = array(
 			array(
 				'handle'	=> 'intl-tel-input',
-				'src'		=> $this->get_base_url() . '/vendor/intl-tel-input/css/intlTelInput.css',
-				'version'	=> '11.0.11',
+				'src'		=> $this->get_base_url() . '/vendor/intl-tel-input/css/intlTelInput.min.css',
+				'version'	=> '14.0.7',
 				'enqueue'	=> array(
 					array( 'field_types' => array( 'phone' ) )
 				),
@@ -177,9 +177,9 @@ class GF_Phone_Extension extends GFAddon {
 		$scripts = array(
 			array(
 				'handle'	=> 'intl-tel-input',
-				'src'		=> $this->get_base_url() . '/vendor/intl-tel-input/js/intlTelInput.min.js',
+				'src'		=> $this->get_base_url() . '/vendor/intl-tel-input/js/intlTelInput-jquery.min.js',
 				'deps'		=> array( 'jquery' ),
-				'version'	=> '11.0.11',
+				'version'	=> '14.0.7',
 				'in_footer' => true,
 				'enqueue'	=> array(
 					array( 'field_types' => array( 'phone' ) )
@@ -189,7 +189,7 @@ class GF_Phone_Extension extends GFAddon {
 				'handle'	=> 'intl-tel-input-utils',
 				'src'		=> $this->get_base_url() . '/vendor/intl-tel-input/js/utils.js',
 				'deps'		=> array( 'jquery', 'intl-tel-input' ),
-				'version'	=> '11.0.11',
+				'version'	=> '14.0.7',
 				'in_footer' => true,
 				'enqueue'	=> array(
 					array( 'field_types' => array( 'phone' ) )

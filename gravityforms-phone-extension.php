@@ -4,7 +4,7 @@
  * Plugin Name:       Gravity Forms Phone Extension
  * Plugin URI:        https://github.com/ANEX-Agency/Gravityforms-Phone-Extension
  * Description:       Extends the Phone Field with a Country Code Selectbox
- * Version:           1.2.1
+ * Version:           1.2.2
  * Author:            ANEX
  * Author URI:        http://anex.at
  * License:           GPL-2.0+
@@ -18,7 +18,7 @@ if ( ! defined( 'WPINC' ) ) {
 	die;
 }
 
-define( 'GF_PHONE_EXTENSION_VERSION', '1.2.1' );
+define( 'GF_PHONE_EXTENSION_VERSION', '1.2.2' );
 
 add_action( 'gform_loaded', array( 'GF_Phone_Extension_Bootstrap', 'load' ), 5 );
 

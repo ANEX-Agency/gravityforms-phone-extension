@@ -3,8 +3,8 @@ Contributors: joehana
 Donate link: http://paypal.me/anex
 Tags: forms, phone, input
 Requires at least: 4.5.0
-Tested up to: 4.9
-Stable tag: 1.2.0
+Tested up to: 5.0
+Stable tag: 1.2.2
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -21,9 +21,13 @@ Extension for GravityForms (WordPress) which applies the International Phone Inp
 
 == Frequently Asked Questions ==
 
--
+How to enable the Country Code Selectbox?
+Simply make sure that your form is enabled for HTML5 (find this in the form settings), and properly add a phone field.
 
 == Changelog ==
+
+= 1.2.2 =
+* Update intlTelInput to 14.0.7
 
 = 1.2.1 =
 * Fix minor issues

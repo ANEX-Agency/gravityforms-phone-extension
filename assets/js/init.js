@@ -1,10 +1,7 @@
 jQuery(document).ready(function($) {
     
 	var $form		= $(".gform_wrapper form");
-	if($form.length===0){
-		$form		= $(".gv-edit-entry-wrapper form");
-	};
-	var $field		= $(".gfield input[type=tel]");
+    var $field		= $(".gfield input[type=tel]");
 
 	/**
 	 * Init International Telephone Field

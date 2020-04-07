@@ -151,11 +151,14 @@ class GF_Phone_Extension extends GFAddon {
 				),
 			),
 			array(
-				'handle'	=> $this->_slug,
+				'handle'	=> str_replace('-', '_', $this->_slug),
 				'src'		=> $this->get_base_url() . '/assets/css/style.css',
 				'version'	=> $this->_version,
 				'enqueue'	=> array(
 					array( 'field_types' => array( 'phone' ) )
+				),
+				'strings' => array(
+					'enable_html5'=> get_option('rg_gforms_enable_html5') 
 				),
 			),
 		);

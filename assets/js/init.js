@@ -3,6 +3,10 @@ jQuery(document).ready(function($) {
 	var $form		= $(".gform_wrapper form");
     var $field		= $(".gfield input[type=tel]");
 
+	if( !gravityforms_phone_extension_strings['enable_html5'] ){
+        $field = $(".gfield .ginput_container_phone input[type=text]");
+    }
+
 	/**
 	 * Init International Telephone Field
 	 */
